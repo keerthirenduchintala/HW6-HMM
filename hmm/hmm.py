@@ -40,7 +40,8 @@ class HiddenMarkovModel:
         Returns:
             forward_probability (float): forward probability (likelihood) for the input observed sequence  
         """        
-        
+        if len(input_observation_states) == 0:
+            raise ValueError('empty sequence!')
         # Step 1. Initialize variables
         # make table right dimensions
         num_obs = len(input_observation_states)
@@ -77,7 +78,8 @@ class HiddenMarkovModel:
         Returns:
             best_hidden_state_sequence(list): most likely list of hidden states that generated the sequence observed states
         """        
-        
+        if len(decode_observation_states) == 0:
+            raise ValueError('empty sequence!')
         # Step 1. Initialize variables
         
         #store probabilities of hidden state at each step 

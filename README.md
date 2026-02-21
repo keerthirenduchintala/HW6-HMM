@@ -13,8 +13,15 @@ For a helpful refresher on HMMs and the Forward and Viterbi Algorithms you can c
 [here](https://towardsdatascience.com/markov-and-hidden-markov-model-3eec42298d75), and [here](https://pieriantraining.com/viterbi-algorithm-implementation-in-python-a-practical-guide/). 
 
 
+## Method Descriptions
 
+## Forward Algorithm
+Calculates the probability of seeing a sequence of observations.
+Uses dynamic programming to fill a table where each cell represents the probability of being in a hidden state at that timestep AND having seen all previous observations.
 
+## Viterbi Algorithm  
+Finds the most likely hidden states given a sequence of observations.
+Similar to Forward but uses max instead of sum, and stores backpointers to store from which hidden state the max probability state the previous observation came from to trace back the best path from the final state to the first
 
 ## Tasks and Data 
 Please complete the `forward` and `viterbi` functions in the HiddenMarkovModel class. 
